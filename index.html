@@ -1,15 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Add Google Fonts here-->
 
     <!--Link your stylesheet here-->
-
-    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <title>Responsive Practice</title>
 </head>
+
+
 <body>
-    
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Illustration of a watering can">
+        </div>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#shop">Plants</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <header id="home">
+        <div class="cta">
+            <h1>The Watering Can</h1>
+            <button>Shop Our Indoor Plant Sale!</button>
+        </div>
+    </header>
+
+    <section id="about">
+        <div>
+            <h2>Our Story</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate deleniti vitae libero consequuntur error et illum adipisci praesentium ducimus similique, unde ex sapiente veritatis quas repellat ipsa cum quisquam harum.
+            </p>
+        </div>
+    </section>
+
+    <section id="shop">
+        <h2>Our Plants</h2>
+        <div class="container">
+            <div class="bg succulents">
+                <!--background img. put in CSS. at first, we just left it as this, but after we edit css, then we came back and gave the div a class-->
+            </div>
+            <div class="text">
+                <div>
+                    <h3>Succulents</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi porro nemo natus in expedita voluptatibus odit repudiandae corporis! Saepe iste iusto ad cum voluptatem fuga labore quos pariatur error impedit!</p>
+                    <button>Shop Now!</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text">
+                <div>
+                    <h3>Cacti</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto earum sunt incidunt quia impedit eveniet atque quibusdam dicta, eligendi sequi. Et, perspiciatis saepe illum dolorum quis assumenda nobis similique incidunt.</p>
+                    <button>Shop Now!</button>
+                </div>
+            </div>
+            <div class="bg cacti">
+                <!--background image put in CSS-->
+            </div>
+        </div>
+        <div class="container">
+            <div class="bg tropical">
+                <!--empty div w backgroung image we put in CSS-->
+            </div>
+            <div class="text">
+                <div>
+                    <h3>Tropicals</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo vitae fugit odit tenetur nam, ipsam nobis a aliquam quos mollitia accusamus incidunt laborum repellat perspiciatis? Sequi voluptas sed ea voluptatum?</p>
+                    <button>Shop Now!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="contact">
+        <h2>Get In Touch!</h2>
+        <div class="footer-parent">
+            <div class="footer left">
+                <div class="text-container">
+                    <h3>Find us here:</h3>
+                    <address>
+                        123 Plant Lane<br>
+                        Bloomfield Ontario,<br>
+                        Canada L2G 0X7
+                    </address>
+                    <a href="tel:1-613-978-8282">+1 613-978-8282</a><br>
+                    <a href="mailto:info@thewateringcan.ca">info@thewateringcan.ca</a>
+                    <p>@thewateringcan on the socials</p>
+                </div>
+            </div>
+            <div class="footer right">
+                <div class="img-wrapper">
+                    <img src="images/shop.jpg" alt="plants on display inside of a plant store">
+                </div>
+            </div>
+        </div>
+        <p class="copyright">Copyright 2021</p>
+    </footer>
 </body>
 </html>
