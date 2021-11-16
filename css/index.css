@@ -101,16 +101,21 @@ header{
     background-repeat:no-repeat;
     background-position: bottom;
     text-align:center;
+    color:aliceblue;
 }
 nav{
     display:flex;
     justify-content: space-between; /*to push logo and links apart*/
     width:100%;
-    position: fixed; /*this will bring it on top of everything else*/
+    position: fixed; /*this will bring it on top of everything else and so you'll aways see the nav*/
     background-color: rgba(255,255,255,0.8); /*this is so it's slightly seethrough*/
 }
 .logo{
     width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*do the last 3 on here to center image*/
 }
 .logo img{
     width: 80%; /*this is 80% of the 10% logo div container*/
@@ -152,6 +157,7 @@ now we need to adjust header bc height isn't that big
 .container{
     display: flex; /*put both divs next to each other*/
     text-align:center;
+    /*so these two will apply to all .container names and we don't have to write this over and over, the stuff below is just for more specifics*/
 }
 .container p{
     text-align:justify;
@@ -217,4 +223,93 @@ footer h3{
 .copyright{
     text-align:right;
     margin-right: 10%;
+}
+
+/*after we layout HMTL sheet and CSS... we make sure it's responsive with media queries*/
+
+/*Media Queries*/
+@media(max-width:800px){
+    /* this is for tablet screens
+
+    testing
+        body{
+        background-color:blue;
+    } */
+    /*so when i get to any screen size that's 800px or SMALLER, it'll turn blue. 
+    max-width is for desktop first. it scales down. aka any screen UNDER 800px would get these styles.
+    min-width is for mobile first. it scales up. aka any screen OVER 800px would get these styles.
+    --inspect page, click phone icon, change size to 800 and see what looks weird..then fix that under here.
+    */
+    #about{
+        background-position: left;
+        /*this doesn't work well...*/
+    }
+    #about div{
+        margin-top: 5%;
+        width: 35%;
+    }
+    .container .text div{
+        width:80%;
+        /*makes text boxes more spaced out*/
+    }
+    .img-wrapper{
+        width:70%;
+        /*the image here looks squished in anything smaller than 800px, so we're making it bigger when it gets to that point or lower*/
+    }
+    .container p{
+        text-align:left;
+    }
+}
+@media(max-width:500px){
+    /*also test here
+    so anything 500px or smaller will turn diff color
+    we'd have to restructure things bc too squished*/
+    nav{
+        flex-direction: column;
+        align-items:center; /*to change cross axis...diff if column*/ 
+    }
+    .logo{
+        width:20%;
+    }
+    .links{
+        width:100%;
+    }
+    #about{
+        justify-content: flex-start;
+    }
+    #about div{
+        margin-left:10%;
+        width:40%;
+    }
+    .container{
+        flex-direction:column;
+        /*images will disappear, so give them a height with .container div width...*/
+        align-items: center;
+    }
+    .container div{
+        width:80%;
+    }
+    .bg{
+        /*This applies to all pics with class bg and then second class name for more specifity*/
+        height: 60vh;
+    }
+    .mobile{
+        flex-direction: column-reverse;
+        /*we put a new class name on line 56 in HTML aka so now it says container mobile. we're just targeting mobile. we want the pic to be above the text*/
+    }
+    .footer-parent{
+        flex-direction: column-reverse;
+        /*to put the pic before the text*/
+        align-items:center;
+    }
+    .left, .right{
+        width:80%;
+        /*now footer image and text fit on top of each other*/
+        margin:2% 0; /*2% on TB, 0 on LR so sections are a bit spaced between each other*/
+    }
+    .copyright{
+        text-align: center;
+        margin-right:0;
+        margin-top:1%;
+    }
 }
