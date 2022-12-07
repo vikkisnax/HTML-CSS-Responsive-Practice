@@ -1,0 +1,315 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	/*border: 0;*/
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*universal styles- selecting everything on the page*/
+*{
+    border: 1px solid pink;
+    /*comment out border after*/
+    max-width:100%;
+    /*so the webpage is never bigger than parent. 
+    so no horizontal scroll bar*/
+}
+
+/*General styles*/
+html{
+    font-size:62.5%; /*so 1 rem=10px*/
+
+}
+body{
+    line-height:1.5; /*good how this is*/
+    font-size:1.8rem;
+    color:#4f4f4f;
+}
+h1, h2, h3{
+    letter-spacing:3px;
+    text-align: center;
+}
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 4rem;
+}
+h3{
+    font-size: 2.5rem;
+}
+a{
+    text-decoration:none;
+    color:#4f4f4f;
+}
+section{
+    padding: 4% 0;
+}
+
+
+/*Header Section Styles*/
+header{
+    height:80vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+    background-image: url('../images/header.jpg');
+    /*in folder called css rn, the image we need isn't in this folder, so we use ../ to go back to the root folder, then look for images folder, then grab file called header.jpg -- and now we can edit pic*/
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: bottom;
+    text-align:center;
+    color:aliceblue;
+}
+nav{
+    display:flex;
+    justify-content: space-between; /*to push logo and links apart*/
+    width:100%;
+    position: fixed; /*this will bring it on top of everything else and so you'll aways see the nav*/
+    background-color: rgba(255,255,255,0.8); /*this is so it's slightly seethrough*/
+}
+.logo{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*do the last 3 on here to center image*/
+}
+.logo img{
+    width: 80%; /*this is 80% of the 10% logo div container*/
+}
+.links{
+    width:60%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center; /*centers button*/
+}
+/*put flex on the parent, here it's .links to space links inside of the nav...bc parent controls the little boxes (divs) inside of it 
+
+now we need to adjust header bc height isn't that big
+...use vh [it adjusts to the viewport that youre viewing site on]. go back up and edit and then do about section.
+*/
+
+
+
+/*About section styles. we want to move it to the right side of the page*/
+#about{
+    display:flex;
+    justify-content: flex-end; /*to get div to the right*/
+    padding: 20% 0; /*LR TB*/
+    background-image: url('../images/about-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#about div{
+    width: 30%;
+    margin-right:5%;
+    /*to push away from the edge, give a margin
+    also want to make headings centered, so do that above for all headers instead of one by one*/ 
+    padding-top: 8%;
+}
+
+
+/*Shop Section Styles*/
+.container{
+    display: flex; /*put both divs next to each other*/
+    text-align:center;
+    /*so these two will apply to all .container names and we don't have to write this over and over, the stuff below is just for more specifics*/
+}
+.container p{
+    text-align:justify;
+    /*just so the rest of the text isnt centered and it's spaced out nicely*/
+}
+.container div{
+    width: 50%; /*each div's inside of containers to take up 50% of page. staying away from px*/
+}
+
+        /*note: here, pics are in the text container too*/
+.container .text {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding: 10% 0;
+    padding-bottom: 15%;
+}
+
+        /*we'll go back in html sheet and add in 2 class names to the images. so we'll give them a common name like "bg" so we can apply a style to all the pics and not have to repeat code in each, 
+        BUT we'll also put a SPACE between the names and then put a specific name so we can edit each pic individually*/
+.bg{
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+.succulents{
+    background-image: url('../images/succulants.jpg');
+}
+.cacti{
+    background-image: url('../images/cacti.jpg');
+}
+.tropical{
+    background-image: url('../images/tropicals.jpg');
+}
+/*pics are too big so change size in .container .text*/
+
+
+/*look at footer html to figure out how to style*/
+footer{
+    padding: 4% 0;
+}
+.footer-parent{
+    display:flex;
+}
+.left, .right{
+    width: 50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /*display flex,etc. to center the text and pic*/
+}
+.img-wrapper{
+    width:55%;
+}
+footer h3{
+    text-align:left;
+    /*text and images are centered but we don't want heading to be centered here*/
+    padding-bottom: 10%;
+}
+.text-container{
+    line-height:2;
+}
+.copyright{
+    text-align:right;
+    margin-right: 10%;
+}
+
+/*after we layout HMTL sheet and CSS... we make sure it's responsive with media queries*/
+
+/*Media Queries*/
+@media(max-width:800px){
+    /* this is for tablet screens
+
+    testing
+        body{
+        background-color:blue;
+    } */
+    /*so when i get to any screen size that's 800px or SMALLER, it'll turn blue. 
+    max-width is for desktop first. it scales down. aka any screen UNDER 800px would get these styles.
+    min-width is for mobile first. it scales up. aka any screen OVER 800px would get these styles.
+    --inspect page, click phone icon, change size to 800 and see what looks weird..then fix that under here.
+    */
+    #about{
+        background-position: left;
+        /*this doesn't work well...*/
+    }
+    #about div{
+        margin-top: 5%;
+        width: 35%;
+    }
+    .container .text div{
+        width:80%;
+        /*makes text boxes more spaced out*/
+    }
+    .img-wrapper{
+        width:70%;
+        /*the image here looks squished in anything smaller than 800px, so we're making it bigger when it gets to that point or lower*/
+    }
+    .container p{
+        text-align:left;
+    }
+}
+@media(max-width:500px){
+    /*also test here
+    so anything 500px or smaller will turn diff color
+    we'd have to restructure things bc too squished*/
+    nav{
+        flex-direction: column;
+        align-items:center; /*to change cross axis...diff if column*/ 
+    }
+    .logo{
+        width:20%;
+    }
+    .links{
+        width:100%;
+    }
+    #about{
+        justify-content: flex-start;
+    }
+    #about div{
+        margin-left:10%;
+        width:40%;
+    }
+    .container{
+        flex-direction:column;
+        /*images will disappear, so give them a height with .container div width...*/
+        align-items: center;
+    }
+    .container div{
+        width:80%;
+    }
+    .bg{
+        /*This applies to all pics with class bg and then second class name for more specifity*/
+        height: 60vh;
+    }
+    .mobile{
+        flex-direction: column-reverse;
+        /*we put a new class name on line 56 in HTML aka so now it says container mobile. we're just targeting mobile. we want the pic to be above the text*/
+    }
+    .footer-parent{
+        flex-direction: column-reverse;
+        /*to put the pic before the text*/
+        align-items:center;
+    }
+    .left, .right{
+        width:80%;
+        /*now footer image and text fit on top of each other*/
+        margin:2% 0; /*2% on TB, 0 on LR so sections are a bit spaced between each other*/
+    }
+    .copyright{
+        text-align: center;
+        margin-right:0;
+        margin-top:1%;
+    }
+}
